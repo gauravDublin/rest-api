@@ -1,6 +1,7 @@
-/**
+/*
+/!**
  * Created by kapoor on 27-09-2017.
- */
+ *!/
 class Point2D {
   private x: number;
   private y: number;//Field for storing data
@@ -19,3 +20,4 @@ class Point2D {
 
 let point2 = new Point2D(10, 20);
 point2.draw();
+*/

@@ -1,6 +1,7 @@
-/**
+/*
+/!**
  * Created by kapoor on 27-09-2017.
- */
+ *!/
 class Point2D {
   constructor(private _x?: number, private _y?: number) {
   }
@@ -26,3 +27,4 @@ let point2 = new Point2D(10, 20);
 let x = point2.x;
 point2.x = 15; // See this
 point2.draw();
+*/
