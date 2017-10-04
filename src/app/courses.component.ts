@@ -20,6 +20,9 @@ import { CoursesService } from './courses.service';
               </table>-->
               <button class="btn btn-primary" [class.active]="isActive">Class Binding</button>
               <button class="btn btn-primary" [style.backgroundColor]="isActive? 'lightgreen': 'pink'">Style Binding</button>
+               <div (click)="onDivClicked()">
+                  <button (click)="onSave($event)">Even Binding</button>
+              </div>
             `
 })
 export class CoursesComponent {
@@ -28,6 +31,14 @@ export class CoursesComponent {
     columnSpan = 2 ;
     isActive = true;
     courses;
+    onSave($event) {
+      $event.stopPropagation(); // STop the bubbleing
+      console.log("Btn was clicked.", $event);
+    }
+
+  onDivClicked() {
+    console.log("Div was clicked.");
+  }
     constructor(service: CoursesService) {
       this.courses = service.getCoursesList();
     }
