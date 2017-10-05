@@ -30,11 +30,14 @@ import { CoursesService } from './courses.service';
                 <br>
               </div>
               <!--<input (keyup)="onKeyUp($event)"/> Submit Data-->
-              <input #email (keyup.enter)="onKeyUp(email.value)"/> Submit Data
+              <!--<input #email (keyup.enter)="onKeyUp(email.value)"/> Submit Data-->
+             <!-- <input [value]="email" (keyup.enter)="email=$event.target.value; onKeyUp()"/> Submit Data-->  <!-- 2 way binding-->
+              <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/> Submit Data
             `
 })
 export class CoursesComponent {
     title = 'Courses';
+  email = 'gaurav.kapoor2@mail.dcu.ie';
     imageURL = 'https://cdn-images-1.medium.com/max/622/1*grk7btEn0OJEQRKgG2Qs2A.png';
     columnSpan = 2 ;
     isActive = true;
@@ -54,8 +57,8 @@ export class CoursesComponent {
       }
     }*/
 
-    onKeyUp(email) {
-      console.log('Enter was pressed.' + email);
+    onKeyUp() {
+      console.log('Enter was pressed.' + this.email);
     }
 
     constructor(service: CoursesService) {
