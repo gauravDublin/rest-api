@@ -8,13 +8,17 @@ import { SummaryPipe } from './summary.pipe';
 import { AppComponent } from './app.component';
 import {CoursesComponent} from "./courses.component";
 import { AuthorComponent } from './author/author.component';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { TitleCasePipe } from './title-case.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     AuthorComponent,
-    SummaryPipe
+    SummaryPipe,
+    FavouritesComponent,
+    TitleCasePipe
   ],
   imports: [
     BrowserModule,
